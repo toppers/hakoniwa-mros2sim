@@ -1,0 +1,9 @@
+[submodule "hakoniwa-ros2pdu"]
+	path = hakoniwa-ros2pdu
+	url = https://github.com/toppers/hakoniwa-ros2pdu.git
+[submodule "hakoniwa-core-cpp-client"]
+	path = hakoniwa-core-cpp-client
+[submodule "hakoniwa-conductor"]
+	path = hakoniwa-conductor
+[submodule "hakoniwa-unity-tb3model"]
+	path = hakoniwa-unity-tb3model
