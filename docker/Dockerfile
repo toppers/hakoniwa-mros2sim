@@ -63,6 +63,7 @@ RUN pip3 install scipy
 RUN bash build.bash
 RUN cp cmake-build/src/hakoc/libshakoc.* /usr/local/lib/hakoniwa/
 RUN cp cmake-build/src/hakoc/libshakoc.so /usr/local/lib/hakoniwa/hakoc.so
+RUN cp cmake-build/core/src/libhako.a /usr/local/lib/hakoniwa/
 RUN cp -rp py /usr/local/lib/hakoniwa/
 ENV PYTHONPATH="/usr/local/lib/hakoniwa/py:$PYTHONPATH"
 RUN cp cmake-build/src/proxy/hako-proxy /usr/local/bin/hakoniwa
@@ -72,6 +73,9 @@ WORKDIR /root
 RUN git clone --recursive https://github.com/toppers/hakoniwa-conductor.git
 WORKDIR /root/hakoniwa-conductor/main
 RUN bash install.bash
+
+# jinja2
+RUN pip install jinja2
 
 RUN mkdir -p /root/workspace
 WORKDIR /root/workspace

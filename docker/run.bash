@@ -37,17 +37,16 @@ fi
 
 if [ ${OS_TYPE} != "Mac" ]
 then
-	docker run -v ${HAKONIWA_TOP_DIR}:/root/workspace/hakoniwa-ros2pdu \
+	docker run -v ${HAKONIWA_TOP_DIR}:/root/workspace/hakoniwa-ros2bridge-dev \
 		-it --rm \
 		--net host \
 		-e CORE_IPADDR=${IPADDR} \
 		-e OS_TYPE=${OS_TYPE} \
-		--name hakoniwa-ros2pdu ${DOCKER_IMAGE} 
+		--name hakoniwa-ros2bridge-dev-container ${DOCKER_IMAGE} 
 else
-	docker run -v ${HAKONIWA_TOP_DIR}:/root/workspace/hakoniwa-ros2pdu \
+	docker run -v ${HAKONIWA_TOP_DIR}:/root/workspace/hakoniwa-ros2bridge-dev \
 		-it --rm \
 		-e CORE_IPADDR=${IPADDR} \
-		-e ROS_UNITY_IPADDR=${IPADDR} \
 		-e OS_TYPE=${OS_TYPE} \
-		--name hakoniwa-ros-sim ${DOCKER_IMAGE} 
+		--name hakoniwa-ros2bridge-dev-container ${DOCKER_IMAGE} 
 fi
