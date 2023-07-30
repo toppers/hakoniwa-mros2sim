@@ -1,2 +1,2 @@
 ros2proxy-run.bash:mqtt
-#tb3-run.bash
+tb3-run.bash
