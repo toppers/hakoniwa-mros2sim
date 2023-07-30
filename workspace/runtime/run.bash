@@ -29,7 +29,10 @@ sleep 1
 LAST_PID=
 for entry in `cat ${ASSET_DEF}`
 do
+    PROG=`echo $entry | awk -F: '{print $1}'`
     echo "INFO: ACTIVATING $entry"
+    bash $PROG &
+    LAST_PID=$!
     sleep 1
 done
 
