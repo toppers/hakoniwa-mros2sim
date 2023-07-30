@@ -30,9 +30,13 @@ LAST_PID=
 for entry in `cat ${ASSET_DEF}`
 do
     PROG=`echo $entry | awk -F: '{print $1}'`
-    echo "INFO: ACTIVATING $entry"
-    bash $PROG &
-    LAST_PID=$!
+    echo "${PROG}" | grep "^#"
+    if [ $? -ne 0 ]
+    then
+        echo "INFO: ACTIVATING $entry"
+        bash $PROG &
+        LAST_PID=$!
+    fi
     sleep 1
 done
 
