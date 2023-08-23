@@ -25,7 +25,9 @@ git submodule update --init --recursive
 bash  utils/install-sampe.bash 
 ```
 
-docker コンテナ上で、箱庭プロキシ(mros2)を作成します。
+### 箱庭プロキシ(mros2)のコード生成
+
+docker コンテナ上で、箱庭プロキシ(mros2)のコードを生成します。
 
 まず、docker コンテナを起動しましょう。
 
@@ -52,7 +54,7 @@ pdu_ctype_LightSensor.h  pdu_ctype_conv_LightSensor.hpp
 app.cpp  hako_pdu_proxy_com_pub.cpp  hako_pdu_proxy_com_sub.cpp
 ```
 
-## 箱庭プロキシ(mros2)のビルド
+### 箱庭プロキシ(mros2)のビルド
 
 箱庭プロキシ(mros2)をビルドするために、ホストPC上で、hakoniwa-ros2pduに移動します。
 
@@ -68,9 +70,9 @@ cd hakoniwa-ros2pdu
 Usage: build_mros2proxy.bash <custom.json> <ipaddr> [<netmask>]
 ```
 
-custom.json は、`config/custom.json` を指定します。
-ipaddr は、ホストPCのIPアドレスを指定します。
-netmask は、ホストPCのネットマスクを指定します。未指定の場合は、`255.255.255.0`となります。
+* custom.json は、`config/custom.json` を指定します。
+* ipaddr は、ホストPCのIPアドレスを指定します。
+* netmask は、ホストPCのネットマスクを指定します。未指定の場合は、`255.255.255.0`となります。
 
 
 以下、実行例です。
@@ -86,3 +88,32 @@ netmask は、ホストPCのネットマスクを指定します。未指定の�
 mros2-posix/cmake_build/mros2-posix: Mach-O 64-bit executable arm64
 ```
 
+## 箱庭コア機能のインストール
+
+箱庭コア機能をホストPC上でインストールします。
+
+```
+cd hakoniwa-core-cpp-client 
+bash build.bash
+bash install.bash
+```
+途中でパスワードを聞かれますので、入力してください。
+成功すると、以下にバイナリが配置されます。
+
+* /usr/local/lib/hakoniwa 
+* /usr/local/bin/hakoniwa 
+
+## 箱庭コンダクタのインストール
+
+箱庭コンダクタをホストPC上でインストールします。
+
+```
+cd hakoniwa-conductor/main
+bash build.bash
+sudo bash install.bash
+```
+
+途中でパスワードを聞かれますので、入力してください。
+成功すると、以下にバイナリが配置されます。
+
+* /usr/local/bin/hakoniwa 
