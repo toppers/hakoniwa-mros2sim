@@ -95,4 +95,3 @@ while true; do
     fi
 done
 
-bash utils/rm_ipcs.bash
