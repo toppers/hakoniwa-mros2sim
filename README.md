@@ -88,6 +88,14 @@ Usage: build_mros2proxy.bash <custom.json> <ipaddr> [<netmask>]
 mros2-posix/cmake_build/mros2-posix: Mach-O 64-bit executable arm64
 ```
 
+このファイルを以下にコピーしてください。
+
+* /usr/local/bin/hakoniwa
+
+```
+sudo cp mros2-posix/cmake_build/mros2-posix /usr/local/bin/hakoniwa/
+```
+
 ## 箱庭コア機能のインストール
 
 箱庭コア機能をホストPC上でインストールします。
