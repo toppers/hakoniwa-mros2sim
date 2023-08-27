@@ -8,7 +8,7 @@ export PATH="/usr/local/bin/hakoniwa:${PATH}"
 export LD_LIBRARY_PATH="/usr/local/lib/hakoniwa:${LD_LIBRARY_PATH}"
 export DYLD_LIBRARY_PATH="/usr/local/lib/hakoniwa:${DYLD_LIBRARY_PATH}"
 ASSET_DEF="workspace/runtime/asset_def.txt"
-bash utils/rm_ipcs.bash
+#bash utils/rm_ipcs.bash
 
 HAKO_CONDUCTOR_PID=
 HAKO_ASSET_PROG_PID=
