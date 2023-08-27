@@ -74,6 +74,14 @@ cd hakoniwa-ros2pdu
 bash create_all_pdus.bash
 ```
 
+成功すると、こうなります。
+
+```
+#### Creating pico_msgs/LightSensor ####
+#### Creating geometry_msgs/Twist ####
+#### Creating geometry_msgs/Vector3 ####
+```
+
 ```
 bash create_proxy.bash ./config/custom.json 
 ```
