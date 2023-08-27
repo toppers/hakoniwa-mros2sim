@@ -1,21 +1,46 @@
 # hakoniwa-mros2sim
 
+
+
 ## 環境
 
 * サポートOS
   * Arm系Mac (M1Mac, M2Mac)
 * 利用する環境
   * Docker Desktop
+  * インストールを実施する場合は、事前に、Docker Desktop を起動してください。
+* 利用するロボット
+  * https://github.com/toppers/hakoniwa-unity-picomodel
+  * 本リポジトリと同じ階層でクローンしてください。
+  * ディレクトリ構成
+    * hakoniwa-unity-picomodel
+    * hakoniwa-mros2sim
+* ロボット制御プログラム
+  * TODO
 
-インストールを実施する場合は、事前に、Docker Desktop を起動してください。
+## 事前準備
 
-## インストール手順
-
-リポジトリをクローンします。
+２つのリポジトリをクローンします。
 
 ```
 git clone --recursive https://github.com/toppers/hakoniwa-mros2sim.git
+```
+
+```
+git clone --recursive https://github.com/toppers/hakoniwa-unity-picomodel.git
+```
+
+クローン完了後、picomodel のインストール手順に従って、picomodelをUnity上で表示できるようにしてください。
+
+
+## hakoniwa-mros2sim のインストール手順
+
+
+```
 cd hakoniwa-mros2sim
+```
+
+```
 git submodule update --init --recursive
 ```
 
@@ -33,6 +58,9 @@ docker コンテナ上で、箱庭プロキシ(mros2)のコードを生成しま
 
 ```
 cd hakoniwa-ros2pdu
+```
+
+```
 bash docker/run.bash en0
 ```
 
@@ -40,7 +68,13 @@ docker コンテナ内で以下のコマンドを実行して箱庭プロキシ�
 
 ```
 cd hakoniwa-ros2pdu
+```
+
+```
 bash create_all_pdus.bash
+```
+
+```
 bash create_proxy.bash ./config/custom.json 
 ```
 
@@ -125,3 +159,23 @@ sudo bash install.bash
 成功すると、以下にバイナリが配置されます。
 
 * /usr/local/bin/hakoniwa 
+
+
+## シミュレーション実行手順
+
+### 箱庭とmros2プロキシを起動する
+
+TODO
+
+## ROS2のpicomodel制御プログラムを起動する
+
+TODO
+
+## Unity のシミュレーションを開始する
+
+TODO
+
+## シミュレーションを停止する
+
+シミュレーションを停止する場合は、Unityのシミュレーションボタンを押して、Unity側のシミュレーションを終了させます。 次に、`run.bash` のターミナルで `Enterキー` を押下して停止します。
+
