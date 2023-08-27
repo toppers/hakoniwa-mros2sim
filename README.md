@@ -1,7 +1,5 @@
 # hakoniwa-mros2sim
 
-
-
 ## 環境
 
 * サポートOS
@@ -270,6 +268,70 @@ Unityのシミュレーションボタンを押下します。
 
 ![スクリーンショット 2023-08-28 8 14 51](https://github.com/toppers/hakoniwa-mros2sim/assets/164193/80da8d6a-5364-415c-8ac1-bffee49b932a)
 
+### ROS2 トピックでロボットを動かす
+
+ロボットのセンサとアクチュエータは、ROS2のトピックで可視化、操作できます。
+
+まず、トピックは以下のように見えます。
+
+```
+$ ros2 topic list
+/PicoModel_cmd_vel
+/PicoModel_light_sensor
+/parameter_events
+```
+
+```
+$ ros2 topic info /PicoModel_cmd_vel
+Type: geometry_msgs/msg/Twist
+Publisher count: 0
+Subscription count: 1
+```
+
+```
+$ ros2 topic info /PicoModel_light_sensor
+Type: pico_msgs/msg/LightSensor
+Publisher count: 1
+Subscription count: 0
+```
+
+#### センサの可視化方法
+
+
+![スクリーンショット 2023-08-28 8 30 07](https://github.com/toppers/hakoniwa-mros2sim/assets/164193/57a6fd17-0a95-4ed6-9174-9fb575a7ca58)
+
+
+```
+$ ros2 topic echo /PicoModel_light_sensor
+forward_r: 117
+forward_l: 117
+left: 2500
+right: 11
+---
+```
+
+#### ロボットの操作方法
+
+ロボットは、以下のメンバで動かすことができます。
+
+* linear.x
+  * 正：前進
+  * 負：後進
+* angular.z
+  * 正：右旋回
+  * 負：左旋回
+
+前進コマンド実行例：
+
+```
+$ ros2 topic pub /PicoModel_cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+```
+
+右旋回コマンド実行例：
+
+```
+$ ros2 topic pub /PicoModel_cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.5}}"
+```
 
 ## シミュレーションを停止する
 
