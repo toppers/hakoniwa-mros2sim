@@ -1,4 +1,4 @@
-FROM ros:foxy as hakoniwa-ros2bridge-dev
+FROM ros:foxy as hakoniwa-mros2sim-dev
 
 ARG DEBIAN_FRONTEND=noninteractive
 
