@@ -258,7 +258,8 @@ Unityのシミュレーションボタンを押下します。
 
 成功するとこうなります。コンソール上にもエラーが出力されていないことを確認してください。
 
-![スクリーンショット 2023-08-28 8 13 12](https://github.com/toppers/hakoniwa-mros2sim/assets/164193/ba814c0b-ce4f-4905-bc7f-5e17fc3fe4a6)
+![スクリーンショット 2023-09-21 6 36 53](https://github.com/toppers/hakoniwa-mros2sim/assets/164193/82bbf462-67b4-4faa-a7c0-2d48eafeae80)
+
 
 ## Unity のシミュレーションを開始する
 
@@ -266,7 +267,7 @@ Unityのシミュレーションボタンを押下します。
 
 成功すると下図のように、シミュレーション時間が増えていきます。
 
-![スクリーンショット 2023-08-28 8 14 51](https://github.com/toppers/hakoniwa-mros2sim/assets/164193/80da8d6a-5364-415c-8ac1-bffee49b932a)
+![スクリーンショット 2023-09-21 6 37 22](https://github.com/toppers/hakoniwa-mros2sim/assets/164193/07f1b0a5-3bb4-403e-8881-6e86ebdd986b)
 
 ### ROS2 トピックでロボットを動かす
 
