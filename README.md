@@ -38,14 +38,10 @@ git clone --recursive https://github.com/toppers/hakoniwa-unity-picomodel.git
 cd hakoniwa-mros2sim
 ```
 
-```
-git submodule update --init --recursive
-```
-
 必要なファイルをコピーします。
 
 ```
-bash  utils/install-sampe.bash 
+bash utils/install-sample.bash 
 ```
 
 ### 箱庭プロキシ(mros2)のコード生成
