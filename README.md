@@ -166,6 +166,8 @@ mros2-posix/cmake_build/mros2-posix: Mach-O 64-bit executable arm64
 sudo cp mros2-posix/cmake_build/mros2-posix /usr/local/bin/hakoniwa/
 ```
 
+現状の実装では、ホストPCのIPアドレスが変更になったら `mros2-posix` の再ビルドとコピーが必要になります（参考：[Issue#6](https://github.com/toppers/hakoniwa-mros2sim/issues/6)）。
+
 ## シミュレーション実行手順
 
 ### 箱庭とmros2プロキシを起動する
